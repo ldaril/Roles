@@ -8,9 +8,7 @@
 
     @include('core::admin._button-create', ['module' => 'roles'])
 
-    <h1>
-        <span>@{{ models.length }} @choice('roles::global.roles', 2)</span>
-    </h1>
+    <h1>@lang('roles::global.name')</h1>
 
     <div class="btn-toolbar">
     </div>
