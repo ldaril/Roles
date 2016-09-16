@@ -5,7 +5,7 @@ namespace TypiCMS\Modules\Roles\Http\Controllers;
 use Illuminate\Support\Facades\Request;
 use TypiCMS\Modules\Core\Http\Controllers\BaseApiController;
 use TypiCMS\Modules\Roles\Models\Role;
-use TypiCMS\Modules\Roles\Repositories\RoleInterface as Repository;
+use TypiCMS\Modules\Roles\Repositories\EloquentRole as Repository;
 
 class ApiController extends BaseApiController
 {

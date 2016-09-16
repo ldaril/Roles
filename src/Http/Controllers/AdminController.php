@@ -5,11 +5,11 @@ namespace TypiCMS\Modules\Roles\Http\Controllers;
 use TypiCMS\Modules\Core\Http\Controllers\BaseAdminController;
 use TypiCMS\Modules\Roles\Http\Requests\FormRequest;
 use TypiCMS\Modules\Roles\Models\Role;
-use TypiCMS\Modules\Roles\Repositories\RoleInterface;
+use TypiCMS\Modules\Roles\Repositories\EloquentRole;
 
 class AdminController extends BaseAdminController
 {
-    public function __construct(RoleInterface $role)
+    public function __construct(EloquentRole $role)
     {
         parent::__construct($role);
     }

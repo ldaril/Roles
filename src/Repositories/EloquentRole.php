@@ -2,15 +2,13 @@
 
 namespace TypiCMS\Modules\Roles\Repositories;
 
-use TypiCMS\Modules\Core\Repositories\RepositoriesAbstract;
 use TypiCMS\Modules\Roles\Models\Role;
 
-class EloquentRole extends RepositoriesAbstract implements RoleInterface
+class EloquentRole extends EloquentRepository
 {
-    public function __construct(Role $model)
-    {
-        $this->model = $model;
-    }
+    protected $repositoryId = 'roles';
+
+    protected $model = Role::class;
 
     /**
      * Get all models.
