@@ -2,6 +2,7 @@
 
 namespace TypiCMS\Modules\Roles\Repositories;
 
+use TypiCMS\Modules\Core\EloquentRepository;
 use TypiCMS\Modules\Roles\Models\Role;
 
 class EloquentRole extends EloquentRepository
@@ -30,7 +31,7 @@ class EloquentRole extends EloquentRepository
      *
      * @return mixed Model or false on error during save
      */
-    public function create(array $data)
+    public function create(array $data = [])
     {
         $roleData = array_except($data, ['exit', 'permissions']);
 
@@ -53,7 +54,7 @@ class EloquentRole extends EloquentRepository
      *
      * @return bool
      */
-    public function update(array $data)
+    public function update($id, array $data = [])
     {
         $role = $this->model->find($data['id']);
 
