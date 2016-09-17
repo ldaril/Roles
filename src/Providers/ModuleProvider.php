@@ -31,7 +31,7 @@ class ModuleProvider extends ServiceProvider
 
         AliasLoader::getInstance()->alias(
             'Roles',
-            \TypiCMS\Modules\Roles\Facades\Facade::class
+            'TypiCMS\Modules\Roles\Facades\Roles'
         );
     }
 
