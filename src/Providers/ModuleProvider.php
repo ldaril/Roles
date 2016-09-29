@@ -50,8 +50,6 @@ class ModuleProvider extends ServiceProvider
          */
         $app->view->composer('core::admin._sidebar', \TypiCMS\Modules\Roles\Composers\SidebarViewComposer::class);
 
-        $app->bind(\TypiCMS\Modules\Roles\Repositories\RoleInterface::class, function (Application $app) {
-            return new EloquentRole(new Role());
-        });
+        $app->bind('Roles', EloquentRole::class);
     }
 }
