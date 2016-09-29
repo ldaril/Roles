@@ -3,9 +3,7 @@
 namespace TypiCMS\Modules\Roles\Providers;
 
 use Illuminate\Foundation\AliasLoader;
-use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
-use TypiCMS\Modules\Roles\Models\Role;
 use TypiCMS\Modules\Roles\Repositories\EloquentRole;
 
 class ModuleProvider extends ServiceProvider
