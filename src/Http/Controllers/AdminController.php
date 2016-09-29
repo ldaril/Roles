@@ -34,7 +34,7 @@ class AdminController extends BaseAdminController
      */
     public function create()
     {
-        $model = $this->repository->getModel();
+        $model = $this->repository->createModel();
         $permissions = [];
 
         return view('roles::admin.create')
