@@ -29,7 +29,7 @@ class RouteServiceProvider extends ServiceProvider
             /*
              * Admin routes
              */
-            $router->group(['middleware' => 'admin', 'prefix' => 'admin'], function(Router $router) {
+            $router->group(['middleware' => 'admin', 'prefix' => 'admin'], function (Router $router) {
                 $router->get('roles', 'AdminController@index')->name('admin::index-roles');
                 $router->get('roles/create', 'AdminController@create')->name('admin::create-role');
                 $router->get('roles/{role}/edit', 'AdminController@edit')->name('admin::edit-role');
@@ -40,7 +40,7 @@ class RouteServiceProvider extends ServiceProvider
             /*
              * API routes
              */
-            $router->group(['middleware' => 'api', 'prefix' => 'api'], function(Router $router) {
+            $router->group(['middleware' => 'api', 'prefix' => 'api'], function (Router $router) {
                 $router->get('roles', 'ApiController@index')->name('api::index-roles');
                 $router->put('roles/{role}', 'ApiController@update')->name('api::update-role');
                 $router->delete('roles/{role}', 'ApiController@destroy')->name('api::destroy-role');
