@@ -21,7 +21,7 @@ class EloquentRole extends EloquentRepository
      */
     public function all(array $with = [], $all = false)
     {
-        return $this->make($with)->order()->get();
+        return $this->with($with)->order()->get();
     }
 
     /**
@@ -35,7 +35,7 @@ class EloquentRole extends EloquentRepository
     {
         $roleData = array_except($data, ['exit', 'permissions']);
 
-        $model = $this->model->fill($roleData);
+        $model = $this->createModel()->fill($roleData);
 
         if ($model->save()) {
             $permissions = isset($data['permissions']) ? $data['permissions'] : [];
@@ -56,7 +56,7 @@ class EloquentRole extends EloquentRepository
      */
     public function update($id, array $data = [])
     {
-        $role = $this->model->find($data['id']);
+        $role = $this->find($data['id']);
 
         $roleData = array_except($data, ['exit', 'permissions']);
 
