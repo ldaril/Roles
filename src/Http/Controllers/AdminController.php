@@ -81,7 +81,7 @@ class AdminController extends BaseAdminController
      */
     public function update(Role $role, FormRequest $request)
     {
-        $this->repository->update($request->all());
+        $this->repository->update(request('id'), $request->all());
 
         return $this->redirect($request, $role);
     }
