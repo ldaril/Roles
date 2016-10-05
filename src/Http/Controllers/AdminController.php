@@ -81,8 +81,24 @@ class AdminController extends BaseAdminController
      */
     public function update(Role $role, FormRequest $request)
     {
-        $this->repository->update(request('id'), $request->all());
+        $this->repository->update($request->id, $request->all());
 
         return $this->redirect($request, $role);
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param \TypiCMS\Modules\Roles\Models\Role $role
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function destroy(Role $role)
+    {
+        $deleted = $this->repository->delete($role);
+
+        return response()->json([
+            'error' => !$deleted,
+        ]);
     }
 }

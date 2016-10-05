@@ -35,15 +35,8 @@ class RouteServiceProvider extends ServiceProvider
                 $router->get('roles/{role}/edit', 'AdminController@edit')->name('admin::edit-role');
                 $router->post('roles', 'AdminController@store')->name('admin::store-role');
                 $router->put('roles/{role}', 'AdminController@update')->name('admin::update-role');
-            });
-
-            /*
-             * API routes
-             */
-            $router->group(['middleware' => 'api', 'prefix' => 'api'], function (Router $router) {
-                $router->get('roles', 'ApiController@index')->name('api::index-roles');
-                $router->put('roles/{role}', 'ApiController@update')->name('api::update-role');
-                $router->delete('roles/{role}', 'ApiController@destroy')->name('api::destroy-role');
+                $router->patch('roles/{role}', 'AdminController@ajaxUpdate');
+                $router->delete('roles/{role}', 'AdminController@destroy')->name('admin::destroy-role');
             });
         });
     }
