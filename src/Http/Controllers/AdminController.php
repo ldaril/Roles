@@ -34,11 +34,11 @@ class AdminController extends BaseAdminController
      */
     public function create()
     {
-        $model = $this->repository->createModel();
-        $permissions = [];
+        $model = $this->repository->getModel();
+        $model->permissions = [];
 
         return view('roles::admin.create')
-            ->with(compact('model', 'permissions'));
+            ->with(compact('model'));
     }
 
     /**
@@ -48,13 +48,10 @@ class AdminController extends BaseAdminController
      */
     public function edit(Role $role, $child = null)
     {
-        $permissions = $role->permissions()->pluck('name')->all();
+        $role->permissions = $role->permissions()->pluck('name')->all();
 
         return view('roles::admin.edit')
-            ->with([
-                'model'       => $role,
-                'permissions' => $permissions,
-            ]);
+            ->with(['model' => $role]);
     }
 
     /**
