@@ -34,7 +34,7 @@ class AdminController extends BaseAdminController
      */
     public function create()
     {
-        $model = $this->repository->getModel();
+        $model = $this->repository->createModel();
         $model->permissions = [];
 
         return view('roles::admin.create')
@@ -63,7 +63,14 @@ class AdminController extends BaseAdminController
      */
     public function store(FormRequest $request)
     {
-        $role = $this->repository->create($request->all());
+        $data = $request->all();
+        $roleData = array_except($data, ['exit', 'permissions']);
+        $role = $this->repository->create($roleData);
+
+        if ($role) {
+            $permissions = isset($data['permissions']) ? $data['permissions'] : [];
+            $role->syncPermissions($permissions);
+        }
 
         return $this->redirect($request, $role);
     }
@@ -78,7 +85,11 @@ class AdminController extends BaseAdminController
      */
     public function update(Role $role, FormRequest $request)
     {
-        $this->repository->update($request->id, $request->all());
+        $data = $request->all();
+        $roleData = array_except($data, ['exit', 'permissions']);
+        $permissions = isset($data['permissions']) ? $data['permissions'] : [];
+        $role->syncPermissions($permissions);
+        $this->repository->update($role->id, $roleData);
 
         return $this->redirect($request, $role);
     }
