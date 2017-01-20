@@ -5,7 +5,7 @@
 <div class="row">
 
     <div class="col-sm-6">
-        {!! BootForm::text(trans('validation.attributes.name'), 'name') !!}
+        {!! BootForm::text(__('validation.attributes.name'), 'name') !!}
     </div>
 
 </div>
