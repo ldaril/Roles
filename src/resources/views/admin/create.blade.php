@@ -2,7 +2,7 @@
 
 @section('title', __('roles::global.New'))
 
-@section('main')
+@section('content')
 
     @include('core::admin._button-back', ['module' => 'roles'])
     <h1>
