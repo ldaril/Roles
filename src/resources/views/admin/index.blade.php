@@ -20,7 +20,7 @@
                 <tr>
                     <th class="delete"></th>
                     <th class="edit"></th>
-                    <th st-sort="name" class="name st-sort" st-sort-default="true">Name</th>
+                    <th st-sort="name" class="name st-sort" st-sort-default="true">@lang('Name')</th>
                 </tr>
                 <tr>
                     <td colspan="2"></td>
