@@ -4,6 +4,7 @@ namespace TypiCMS\Modules\Roles\Providers;
 
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
+use TypiCMS\Modules\Roles\Facades\Roles;
 use TypiCMS\Modules\Roles\Repositories\EloquentRole;
 
 class ModuleProvider extends ServiceProvider
@@ -27,10 +28,7 @@ class ModuleProvider extends ServiceProvider
             __DIR__.'/../database' => base_path('database'),
         ], 'migrations');
 
-        AliasLoader::getInstance()->alias(
-            'Roles',
-            'TypiCMS\Modules\Roles\Facades\Roles'
-        );
+        AliasLoader::getInstance()->alias('Roles', Roles::class);
     }
 
     public function register()
