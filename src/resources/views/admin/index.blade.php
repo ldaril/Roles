@@ -11,6 +11,9 @@
     <h1>@lang('roles::global.name')</h1>
 
     <div class="btn-toolbar">
+        @include('core::admin._button-select')
+        @include('core::admin._button-actions', ['limit' => ['delete']])
+        @include('core::admin._button-export')
     </div>
 
     <div class="table-responsive">
@@ -32,7 +35,9 @@
 
             <tbody>
                 <tr ng-repeat="model in displayedModels">
-                    <td typi-btn-delete action="delete(model, model.name)"></td>
+                    <td>
+                        <input type="checkbox" checklist-model="checked.models" checklist-value="model">
+                    </td>
                     <td>
                         @include('core::admin._button-edit', ['module' => 'roles'])
                     </td>
