@@ -1,6 +1,7 @@
 {!! BootForm::hidden('id') !!}
 
-@include('core::admin._buttons-form')
+@component('core::admin._buttons-form', ['model' => $model])
+@endcomponent
 
 <div class="row">
 
