@@ -10,6 +10,7 @@ use Spatie\Permission\Traits\HasPermissions;
 use Spatie\Permission\Traits\RefreshesPermissionCache;
 use TypiCMS\Modules\Core\Models\Base;
 use TypiCMS\Modules\History\Traits\Historable;
+use TypiCMS\Modules\Roles\Presenters\ModulePresenter;
 
 class Role extends Base implements RoleContract
 {
@@ -18,7 +19,7 @@ class Role extends Base implements RoleContract
     use PresentableTrait;
     use RefreshesPermissionCache;
 
-    protected $presenter = 'TypiCMS\Modules\Roles\Presenters\ModulePresenter';
+    protected $presenter = ModulePresenter::class;
 
     public $guarded = ['id'];
 
