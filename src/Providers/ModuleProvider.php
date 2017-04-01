@@ -20,13 +20,11 @@ class ModuleProvider extends ServiceProvider
 
         $this->loadViewsFrom(__DIR__.'/../resources/views/', 'roles');
         $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'roles');
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
         $this->publishes([
             __DIR__.'/../resources/views' => base_path('resources/views/vendor/roles'),
         ], 'views');
-        $this->publishes([
-            __DIR__.'/../database' => base_path('database'),
-        ], 'migrations');
 
         AliasLoader::getInstance()->alias('Roles', Roles::class);
     }
