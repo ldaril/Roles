@@ -2,11 +2,9 @@
 
 return [
     'roles' => [
-        'index-roles' => 'Show list',
+        'index-roles' => 'View list',
         'create-role' => 'Create',
-        'store-role' => 'Store',
         'edit-role' => 'Edit',
-        'update-role' => 'Update',
         'destroy-role' => 'Destroy',
     ],
 ];
