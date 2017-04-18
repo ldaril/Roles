@@ -90,6 +90,7 @@ class AdminController extends BaseAdminController
         $permissions = isset($data['permissions']) ? $data['permissions'] : [];
         $role->syncPermissions($permissions);
         $this->repository->update($role->id, $roleData);
+        $role->forgetCachedPermissions();
 
         return $this->redirect($request, $role);
     }
