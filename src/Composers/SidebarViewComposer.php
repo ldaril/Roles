@@ -11,7 +11,7 @@ class SidebarViewComposer
 {
     public function compose(View $view)
     {
-        $view->sidebar->group(__('global.menus.users'), function (SidebarGroup $role) {
+        $view->sidebar->group(__('Users and roles'), function (SidebarGroup $role) {
             $role->addItem(__('roles::global.name'), function (SidebarItem $item) {
                 $item->id = 'roles';
                 $item->icon = config('typicms.roles.sidebar.icon', 'icon fa fa-fw fa-users');
