@@ -11,4 +11,5 @@ return [
     'Change settings' => 'Changer la configuration',
     'View history' => 'Voir l’historique',
     'Empty history' => 'Vider l’historique',
+    'View navbar' => 'Voir la barre de navigation',
 ];

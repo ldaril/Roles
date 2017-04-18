@@ -11,4 +11,5 @@ return [
     'Change settings' => 'Change settings',
     'View history' => 'View history',
     'Empty history' => 'Empty history',
+    'View navbar' => 'View navbar',
 ];

@@ -11,4 +11,5 @@ return [
     'Change settings' => 'Configuración',
     'View history' => 'Historial',
     'Empty history' => 'Limpiar historial',
+    'View navbar' => 'Mostrar la barra de navegación',
 ];
