@@ -8,8 +8,9 @@ return [
     'Back' => 'Retour à la liste des rôles',
     'Role permissions' => 'Permissions du rôle',
     'Access dashboard' => 'Accéder au tableau de bord',
+    'See settings' => 'Voir la configuration',
     'Change settings' => 'Changer la configuration',
-    'View history' => 'Voir l’historique',
+    'See history' => 'Voir l’historique',
     'Empty history' => 'Vider l’historique',
-    'View navbar' => 'Voir la barre de navigation',
+    'See navbar' => 'Voir la barre de navigation',
 ];

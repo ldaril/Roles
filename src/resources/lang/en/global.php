@@ -8,8 +8,9 @@ return [
     'Back' => 'Back to roles',
     'Role permissions' => 'Role permissions',
     'Access dashboard' => 'Access dashboard',
+    'See settings' => 'See settings',
     'Change settings' => 'Change settings',
-    'View history' => 'View history',
+    'See history' => 'See history',
     'Empty history' => 'Empty history',
-    'View navbar' => 'View navbar',
+    'See navbar' => 'See navbar',
 ];
