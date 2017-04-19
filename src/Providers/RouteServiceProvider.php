@@ -30,13 +30,13 @@ class RouteServiceProvider extends ServiceProvider
              * Admin routes
              */
             $router->group(['middleware' => 'admin', 'prefix' => 'admin'], function (Router $router) {
-                $router->get('roles', 'AdminController@index')->name('admin::index-roles');
-                $router->get('roles/create', 'AdminController@create')->name('admin::create-role');
-                $router->get('roles/{role}/edit', 'AdminController@edit')->name('admin::edit-role');
-                $router->post('roles', 'AdminController@store')->name('admin::store-role');
-                $router->put('roles/{role}', 'AdminController@update')->name('admin::update-role');
-                $router->patch('roles/{ids}', 'AdminController@ajaxUpdate')->name('admin::update-role-ajax');
-                $router->delete('roles/{ids}', 'AdminController@destroyMultiple')->name('admin::destroy-role');
+                $router->get('roles', 'AdminController@index')->name('admin::index-roles')->middleware('can:see-all-roles');
+                $router->get('roles/create', 'AdminController@create')->name('admin::create-role')->middleware('can:create-role');
+                $router->get('roles/{role}/edit', 'AdminController@edit')->name('admin::edit-role')->middleware('can:update-role');
+                $router->post('roles', 'AdminController@store')->name('admin::store-role')->middleware('can:create-role');
+                $router->put('roles/{role}', 'AdminController@update')->name('admin::update-role')->middleware('can:update-role');
+                $router->patch('roles/{ids}', 'AdminController@ajaxUpdate')->name('admin::update-role-ajax')->middleware('can:update-role');
+                $router->delete('roles/{ids}', 'AdminController@destroyMultiple')->name('admin::destroy-role')->middleware('can:delete-role');
             });
         });
     }
