@@ -6,7 +6,7 @@
 <div class="row">
 
     <div class="col-sm-6">
-        {!! BootForm::text(__('Name'), 'name') !!}
+        {!! BootForm::text(__('Name'), 'name')->required() !!}
     </div>
 
 </div>
