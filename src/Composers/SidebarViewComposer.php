@@ -17,7 +17,7 @@ class SidebarViewComposer
         $view->sidebar->group(__('Users and roles'), function (SidebarGroup $group) {
             $group->id = 'users';
             $group->weight = 50;
-            $group->addItem(__('roles::global.name'), function (SidebarItem $item) {
+            $group->addItem(__('Roles'), function (SidebarItem $item) {
                 $item->id = 'roles';
                 $item->icon = config('typicms.roles.sidebar.icon', 'icon fa fa-fw fa-users');
                 $item->weight = config('typicms.roles.sidebar.weight');

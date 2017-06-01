@@ -11,5 +11,5 @@
 
 </div>
 
-<label>@lang('roles::global.Role permissions')</label>
+<label>@lang('Role permissions')</label>
 @include('core::admin._permissions-form')
