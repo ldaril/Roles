@@ -29,6 +29,11 @@ class ModuleProvider extends ServiceProvider
         ], 'views');
 
         AliasLoader::getInstance()->alias('Roles', Roles::class);
+
+        /*
+         * Sidebar view composer
+         */
+        $this->app->view->composer('core::admin._sidebar', \TypiCMS\Modules\Roles\Composers\SidebarViewComposer::class);
     }
 
     public function register()
@@ -40,11 +45,6 @@ class ModuleProvider extends ServiceProvider
          */
         $app->register(\TypiCMS\Modules\Roles\Providers\RouteServiceProvider::class);
         $app->register(\Spatie\Permission\PermissionServiceProvider::class);
-
-        /*
-         * Sidebar view composer
-         */
-        $app->view->composer('core::admin._sidebar', \TypiCMS\Modules\Roles\Composers\SidebarViewComposer::class);
 
         $app->bind('Roles', EloquentRole::class);
     }
